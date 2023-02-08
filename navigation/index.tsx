@@ -12,9 +12,9 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import HomeScreen from '../screens/HomeScreen/index';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -64,8 +64,9 @@ function BottomTabNavigator() {
       }}>
       <BottomTab.Screen
         name="Home"
-        component={TabTwoScreen}
+        component={HomeScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <AntDesign name='home' size={24} color={color} style={{marginBottom: 8}}/>,
         }}
       />
@@ -73,6 +74,7 @@ function BottomTabNavigator() {
         name="Coming_Soon"
         component={TabTwoScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <MaterialIcons name='video-library' size={24} color={color}/>,
         }}
       />
@@ -80,6 +82,7 @@ function BottomTabNavigator() {
         name="Search"
         component={TabTwoScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <Ionicons name='search' size={24} color={color}/>,
         }}
       />
@@ -87,6 +90,7 @@ function BottomTabNavigator() {
         name="Downloads"
         component={TabTwoScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <AntDesign name='download' size={24} color={color}/>, 
         }}
       />
